@@ -21,13 +21,14 @@
                         <span>+</span>
                     </button>
                 </span>
-                <span class="new_message_button">
-                    <button type="button" class="button small rounded compose_stream_button"
-                      id="left_bar_compose_stream_button_big"
-                      title="{{ _('New topic') }} (c)">
-                        <span class="compose_stream_button_label">{{ _('New topic') }}</span>
-                    </button>
-                </span>
+{#            commenting as no need of new topics #}
+{#                <span class="new_message_button">#}
+{#                    <button type="button" class="button small rounded compose_stream_button"#}
+{#                      id="left_bar_compose_stream_button_big"#}
+{#                      title="{{ _('New topic') }} (c)">#}
+{#                        <span class="compose_stream_button_label">{{ _('New topic') }}</span>#}
+{#                    </button>#}
+{#                </span>#}
                 {% if not embedded %}
                 <span class="new_message_button">
                     <button type="button" class="button small rounded compose_private_button"
@@ -64,7 +65,8 @@
                     <div class="compose_table">
                         <div id="stream-message">
                             <div class="message_header_colorblock message_header_stream left_part"></div>
-                            <div class="right_part">
+                            <!-- adding property displaying none to hide the topics !-->
+                            <div class="right_part" style="display: none">
                                 <span id="compose-lock-icon">
                                     <i class="fa fa-lock" title="{{ _('This is a private stream') }}" aria-hidden="true"></i>
                                 </span>

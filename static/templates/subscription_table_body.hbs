@@ -3,7 +3,7 @@
         <div class="subscriptions-container modal-bg">
             <div class="subscriptions-header">
                 <div class="fa fa-chevron-left"></div>
-                <span class="subscriptions-title">{{t 'Streams' }}</span>
+                <span class="subscriptions-title">{{t 'Groups' }}</span>
                 <div class="exit">
                     <span class="exit-sign">&times;</span>
                 </div>
@@ -12,10 +12,10 @@
                 <div class="search-container">
                     <form id="add_new_subscription" class="form-inline" action="">
                         <input type="text" name="stream_name" id="search_stream_name"
-                          placeholder="{{t 'Filter streams' }}" value="" autocomplete="off" />
+                          placeholder="{{t 'Filter Group' }}" value="" autocomplete="off" />
                         {{#if can_create_streams}}
                         <input type="submit" class="create_stream_button"
-                          value="+" title="{{t 'Create new stream' }} (n)"/>
+                          value="+" title="{{t 'Create new Group' }} (n)"/>
                         {{/if}}
                         <div class="float-clear"></div>
                     </form>
@@ -25,13 +25,13 @@
             </div>
             <div class="right">
                 <div class="display-type">
-                    <div id="add_new_stream_title" class="stream-info-title">{{t 'Create stream' }}</div>
-                    <div id="stream_settings_title" class="stream-info-title">{{t 'Stream settings' }}</div>
+                    <div id="add_new_stream_title" class="stream-info-title">{{t 'Create Group' }}</div>
+                    <div id="stream_settings_title" class="stream-info-title">{{t 'Group settings' }}</div>
                 </div>
                 <div class="nothing-selected">
                     {{#if can_create_streams}}
-                    <button type="button" class="create_stream_button button small rounded">{{t 'Create stream' }}</button>
-                    <span>{{t 'First time? Read our <a href="/help/getting-your-organization-started-with-zulip#create-streams" target="_blank">guidelines</a> for creating and naming streams.' }}</span>
+                    <button type="button" class="create_stream_button button small rounded">{{t 'Create group' }}</button>
+                    <span>{{t 'First time? Read our <a href="/help/getting-your-organization-started-with-zulip#create-streams" target="_blank">guidelines</a> for creating and naming group.' }}</span>
                     {{/if}}
                 </div>
                 <div class="settings" data-simplebar data-simplebar-auto-hide="false">

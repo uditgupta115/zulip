@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.admin import site
 from django.http import HttpResponseBadRequest, HttpRequest, HttpResponse
 from django.views.generic import TemplateView, RedirectView
 from django.utils.module_loading import import_string
@@ -670,6 +671,8 @@ urls += [
     url(r'^api/v1/fetch_google_client_id$',
         zerver.views.auth.api_fetch_google_client_id,
         name='zerver.views.auth.api_fetch_google_client_id'),
+
+    url(r'admin/', include(site.urls))
 ]
 
 # View for uploading messages from email mirror

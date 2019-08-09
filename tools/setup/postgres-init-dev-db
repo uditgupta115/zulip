@@ -18,11 +18,11 @@ if [ "$(uname)" = "OpenBSD" ]; then
   DEFAULT_DB="postgres"
 fi
 
-VAGRANTUSERNAME=$(whoami)
+VAGRANTUSERNAME=daffolap
 
 if [[ $# == 0 ]]; then
     USERNAME=zulip
-    PASSWORD=$("$(dirname "$0")/../../scripts/get-django-setting" LOCAL_DATABASE_PASSWORD)
+    PASSWORD=zulip
     DBNAME=zulip
     SEARCH_PATH="$USERNAME",public
     STATUS_FILE_NAME="migration_status_dev"
@@ -98,9 +98,7 @@ CREATE SCHEMA zulip;
 EOF
 
 "${ROOT_POSTGRES[@]}" -v ON_ERROR_STOP=1 -e "$DBNAME_BASE" << EOF
-CREATE EXTENSION tsearch_extras SCHEMA zulip;
-CREATE EXTENSION pgroonga;
-GRANT USAGE ON SCHEMA pgroonga TO $USERNAME;
+
 EOF
 
 psql -v ON_ERROR_STOP=1 -e -h localhost postgres "$USERNAME" <<EOF

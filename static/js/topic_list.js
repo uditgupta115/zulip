@@ -95,30 +95,30 @@ exports.widget = function (parent_elem, my_stream_id) {
 
         var ul = $('<ul class="topic-list">');
 
-        _.each(topic_names, function (topic_name, idx) {
-            var num_unread = unread.num_unread_for_topic(my_stream_id, topic_name);
-
-            if (!zoomed) {
-                // Show the most recent topics, as well as any with unread messages
-                var show_topic = idx < max_topics || num_unread > 0 ||
-                                 self.active_topic === topic_name.toLowerCase();
-
-                if (!show_topic) {
-                    return;
-                }
-            }
-
-            var topic_info = {
-                topic_name: topic_name,
-                unread: num_unread,
-                is_zero: num_unread === 0,
-                is_muted: muting.is_topic_muted(my_stream_id, topic_name),
-                url: hash_util.by_stream_topic_uri(my_stream_id, topic_name),
-            };
-            var li = $(render_topic_list_item(topic_info));
-            self.topic_items.set(topic_name, li);
-            ul.append(li);
-        });
+        // _.each(topic_names, function (topic_name, idx) {
+        //     var num_unread = unread.num_unread_for_topic(my_stream_id, topic_name);
+        //
+        //     if (!zoomed) {
+        //         // Show the most recent topics, as well as any with unread messages
+        //         var show_topic = idx < max_topics || num_unread > 0 ||
+        //                          self.active_topic === topic_name.toLowerCase();
+        //
+        //         if (!show_topic) {
+        //             return;
+        //         }
+        //     }
+        //
+        //     var topic_info = {
+        //         topic_name: topic_name,
+        //         unread: num_unread,
+        //         is_zero: num_unread === 0,
+        //         is_muted: muting.is_topic_muted(my_stream_id, topic_name),
+        //         url: hash_util.by_stream_topic_uri(my_stream_id, topic_name),
+        //     };
+        //     var li = $(render_topic_list_item(topic_info));
+        //     self.topic_items.set(topic_name, li);
+        //     ul.append(li);
+        // });
 
         // Now, we decide whether we need to show the "more topics"
         // widget.  We need it if there are at least 5 topics in the

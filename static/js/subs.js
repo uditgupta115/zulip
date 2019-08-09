@@ -535,7 +535,7 @@ exports.setup_page = function (callback) {
             child_wants_focus: true,
             values: [
                 { label: i18n.t("Subscribed"), key: "subscribed" },
-                { label: i18n.t("All streams"), key: "all-streams" },
+                { label: i18n.t("All Groups"), key: "all-streams" },
             ],
             callback: function (value, key) {
                 exports.switch_stream_tab(key);

@@ -183,7 +183,7 @@ DEFAULT_SETTINGS = {
 
     # File uploads and avatars
     'DEFAULT_AVATAR_URI': '/static/images/default-avatar.png',
-    'DEFAULT_LOGO_URI': '/static/images/logo/zulip-org-logo.png',
+    'DEFAULT_LOGO_URI': '/static/images/logo/daffodil_logo.png',
     'S3_AVATAR_BUCKET': '',
     'S3_AUTH_UPLOADS_BUCKET': '',
     'S3_REGION': '',
@@ -629,7 +629,7 @@ DATABASES = {"default": {
 if DEVELOPMENT:
     LOCAL_DATABASE_PASSWORD = get_secret("local_database_password")
     DATABASES["default"].update({
-        'PASSWORD': LOCAL_DATABASE_PASSWORD,
+        'PASSWORD': 'zulip',
         'HOST': 'localhost'
     })
 elif REMOTE_POSTGRES_HOST != '':
