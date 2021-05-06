@@ -54,7 +54,7 @@
     "to-markdown": "3.1.0",
     "ts-node": "7.0.1",
     "typescript": "3.5.1",
-    "underscore": "1.9.1",
+    "underscore": "1.12.1",
     "webfonts-loader": "^4.4.0",
     "webpack": "4.33.0",
     "webpack-bundle-tracker": "0.3.0",
